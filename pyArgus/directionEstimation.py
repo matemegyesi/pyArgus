@@ -644,7 +644,7 @@ def forward_backward_avg(R):
     J = np.fliplr(J) 
     J = np.array(J)
     
-    R_fb = 0.5 * (R + J*np.conjugate(R)*J)
+    R_fb = 0.5 * (R + J@np.conjugate(R)@J)
 
     return np.array(R_fb)
          
